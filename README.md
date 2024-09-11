@@ -1,9 +1,20 @@
 # AI Hack Logistics - App de Agendamento e Gestão de Consultas
 
+---
+
+## Integrantes:
+
+- RM551261 - Giovanni Sguizzardi
+- RM98057 - Nicolas E. Inohue
+- RM99841 - Marcel Prado
+- RM552302 - Samara Moreira 
+- RM552293 - Vinicius Monteiro
+
+---
+
 **Descrição do Projeto:**
 
 O AIHackLogistics é um aplicativo Android projetado para agendamentos e marcação de consultas médicas. O aplicativo permite que os usuários criem novos agendamentos de consulta, visualizem uma lista de consultas e editem ou excluam consultas anteriores, tudo com o auxílio do Firebase.
-
 Além disso, oferece validações importantes de dados, como CPF e data de agendamento, para garantir que as informações inseridas pelos usuários sejam precisas. A interface do aplicativo foi projetada para proporcionar uma experiência contínua, com pouca dificuldade ao navegar entre a página de agendamento, listagem e edição.
 
 ---
