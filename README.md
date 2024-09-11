@@ -2,7 +2,7 @@
 
 ---
 
-## Integrantes:
+** Integrantes: **
 
 - RM551261 - Giovanni Sguizzardi
 - RM98057 - Nicolas E. Inohue
