@@ -2,9 +2,9 @@
 
 **Descrição do Projeto:**
 
-O **AI Hack Logistics** é um aplicativo Android desenvolvido para facilitar o agendamento e a gestão de consultas médicas. Utilizando o Firebase como banco de dados, o app permite aos usuários marcar consultas, visualizar uma lista de consultas agendadas e editar ou excluir consultas previamente cadastradas.
+O AIHackLogistics é um aplicativo Android projetado para agendamentos e marcação de consultas médicas. O aplicativo permite que os usuários criem novos agendamentos de consulta, visualizem uma lista de consultas e editem ou excluam consultas anteriores, tudo com o auxílio do Firebase.
 
-O aplicativo também oferece validações de dados importantes, como CPF e data de agendamento, garantindo a precisão das informações fornecidas pelos usuários. A interface do aplicativo é intuitiva e funcional, oferecendo uma experiência fluida ao navegar entre as páginas de agendamento, listagem e edição.
+Além disso, oferece validações importantes de dados, como CPF e data de agendamento, para garantir que as informações inseridas pelos usuários sejam precisas. A interface do aplicativo foi projetada para proporcionar uma experiência contínua, com pouca dificuldade ao navegar entre a página de agendamento, listagem e edição.
 
 ---
 
