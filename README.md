@@ -45,20 +45,20 @@ Além disso, oferece validações importantes de dados, como CPF e data de agend
 
 ## Telas presentes na aplicação:
 
-#Página Inicial:
+### Página Inicial:
 ![image](https://github.com/user-attachments/assets/c87af1b1-b155-4654-bc04-707b51a00829)
 
-- Página de Agendamento de Consultas:
+### Página de Agendamento de Consultas:
 ![image](https://github.com/user-attachments/assets/b4c74a07-6be8-428e-943d-b43ad50b61c4)
 
-- Página de Confirmação da Consulta:
+### Página de Confirmação da Consulta:
 ![image](https://github.com/user-attachments/assets/e1c77a0e-2961-434b-a6af-187022331d41)
 
-- Página de Consultas Marcadas:
+### Página de Consultas Marcadas:
 ![image](https://github.com/user-attachments/assets/355fa04b-0675-4909-9bf6-d95ae0b4a50e)
 
-- Página de Desmarcar Consultas:
+### Página de Desmarcar Consultas:
 ![image](https://github.com/user-attachments/assets/bfa1ed95-21b6-48ef-a0e3-65331b81d602)
 
-- Página de Edição de Consultas:
+### Página de Edição de Consultas:
 ![image](https://github.com/user-attachments/assets/f34e9326-cca1-40bf-8e28-3c3de717869e)
