@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Campo Nome -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterar nome:" />
+    <EditText
+        android:id="@+id/inputNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Digite o nome" />
+
+    <!-- Campo Especialidade -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterar especialidade:" />
+    <EditText
+        android:id="@+id/inputEspecialidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Digite a especialidade" />
+
+    <!-- Campo Data da Consulta -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterar data da consulta:" />
+    <EditText
+        android:id="@+id/inputDataConsulta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:hint="dd/mm/yyyy" />
+
+    <!-- Campo CPF -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterar o CPF:" />
+
+    <EditText
+        android:id="@+id/inputCpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o CPF"
+        android:minHeight="48dp" />
+
+    <!-- Botão Salvar -->
+    <Button
+        android:id="@+id/buttonSalvar"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar Alterações"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:layout_gravity="center" />
+</LinearLayout>

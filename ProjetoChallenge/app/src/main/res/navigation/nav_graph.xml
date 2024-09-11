@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/PaginaInicial">
+
+    <!-- Página Inicial -->
+    <fragment
+        android:id="@+id/PaginaInicial"
+        android:name="br.com.challenge.aihacklogistics.paginas.PaginaInicialActivity"
+        android:label="Página Inicial"
+        tools:layout="@layout/pagina_inicial">
+
+        <!-- Ações a partir da Página Inicial -->
+        <action
+            android:id="@+id/action_PaginaInicial_to_PaginaAgendamento"
+            app:destination="@id/PaginaAgendamento" />
+
+        <action
+            android:id="@+id/action_PaginaInicial_to_ListarClientesActivity"
+            app:destination="@id/ListarClientesActivity" />
+
+        <action
+            android:id="@+id/action_PaginaInicial_to_PaginaExcluirActivity"
+            app:destination="@id/PaginaExcluirActivity" />
+    </fragment>
+
+    <!-- Página de Agendamento -->
+    <fragment
+        android:id="@+id/PaginaAgendamento"
+        android:name="br.com.challenge.aihacklogistics.paginas.fragment.PaginaAgendamentoFragment"
+        android:label="Página de Agendamento"
+        tools:layout="@layout/pagina_agendamento">
+
+        <!-- Ação para a Página de Confirmação -->
+        <action
+            android:id="@+id/action_PaginaAgendamento_to_PaginaConfirmacaoFragment"
+            app:destination="@id/PaginaConfirmacaoFragment" />
+    </fragment>
+
+    <!-- Página de Confirmação -->
+    <fragment
+        android:id="@+id/PaginaConfirmacaoFragment"
+        android:name="br.com.challenge.aihacklogistics.paginas.fragment.PaginaConfirmacaoFragment"
+        android:label="Confirmação"
+        tools:layout="@layout/pagina_confirmacao">
+
+        <!-- Ação para voltar à Página Inicial -->
+        <action
+            android:id="@+id/action_PaginaConfirmacaoFragment_to_PaginaInicial"
+            app:destination="@id/PaginaInicial" />
+    </fragment>
+
+    <!-- Página de Listagem de Consultas -->
+    <fragment
+        android:id="@+id/ListarClientesActivity"
+        android:name="br.com.challenge.aihacklogistics.paginas.PaginaListarActivity"
+        android:label="Consultas Marcadas"
+        tools:layout="@layout/activity_listar_consultas">
+
+        <!-- Ação para a Página de Edição de Consulta -->
+        <action
+            android:id="@+id/action_PaginaListar_to_PaginaEditarConsulta"
+            app:destination="@id/PaginaEditarConsulta" />
+    </fragment>
+
+    <!-- Página de Edição de Consulta -->
+    <fragment
+        android:id="@+id/PaginaEditarConsulta"
+        android:name="br.com.challenge.aihacklogistics.paginas.fragment.PaginaEditarConsultaFragment"
+        android:label="Editar Consulta"
+        tools:layout="@layout/activity_editar_consulta">
+
+        <!-- Ação para voltar à Página de Listagem de Consultas -->
+        <action
+            android:id="@+id/action_PaginaEditarConsulta_to_ListarClientesActivity"
+            app:destination="@id/ListarClientesActivity" />
+        <action
+            android:id="@+id/action_PaginaEditarConsulta_to_PaginaInicial"
+            app:destination="@id/PaginaInicial" />
+    </fragment>
+
+    <!-- Página de Exclusão de Consultas -->
+    <fragment
+        android:id="@+id/PaginaExcluirActivity"
+        android:name="br.com.challenge.aihacklogistics.paginas.PaginaExcluirActivity"
+        android:label="Desmarcar Consulta(s)"
+        tools:layout="@layout/activity_excluir_consultas" />
+</navigation>

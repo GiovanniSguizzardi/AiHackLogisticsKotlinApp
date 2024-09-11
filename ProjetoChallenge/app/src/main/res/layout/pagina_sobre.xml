@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre o App"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:paddingBottom="16dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/txtVersao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Versão: 1.0.0"
+        android:textSize="18sp"
+        android:paddingBottom="8dp" />
+
+    <!-- Data de lançamento da versão -->
+    <TextView
+        android:id="@+id/txtDataLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data de lançamento da versão: 10/09/2024"
+        android:textSize="18sp"
+        android:paddingBottom="16dp" />
+
+    <!-- Título Criadores -->
+    <TextView
+        android:id="@+id/txtCriadoresTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criadores:"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:paddingBottom="8dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:id="@+id/txtCriador1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Giovanni Sguizzardi Conde"
+            android:textSize="16sp"
+            android:paddingTop="4dp" />
+
+        <TextView
+            android:id="@+id/txtCriador2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Nicolas Eiti Inohue"
+            android:textSize="16sp"
+            android:paddingTop="4dp" />
+        <TextView
+            android:id="@+id/txtCriador3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Marcel Prado Soddano"
+            android:textSize="16sp"
+            android:paddingTop="4dp" />
+        <TextView
+            android:id="@+id/txtCriador4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Samara Moreira"
+            android:textSize="16sp"
+            android:paddingTop="4dp" />
+        <TextView
+            android:id="@+id/txtCriador5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Vinicius Monteiro"
+            android:textSize="16sp"
+            android:paddingTop="4dp" />
+    </LinearLayout>
+</LinearLayout>
