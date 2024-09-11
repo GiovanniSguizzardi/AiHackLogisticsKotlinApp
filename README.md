@@ -45,7 +45,7 @@ Além disso, oferece validações importantes de dados, como CPF e data de agend
 
 ## Telas presentes na aplicação:
 
-- Página Inicial:
+#Página Inicial:
 ![image](https://github.com/user-attachments/assets/c87af1b1-b155-4654-bc04-707b51a00829)
 
 - Página de Agendamento de Consultas:
