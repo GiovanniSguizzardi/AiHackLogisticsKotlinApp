@@ -1,7 +1,9 @@
 # AI Hack Logistics - App de Agendamento, gestão de Consultas
 
 > [!NOTE]
-> A VERSÃO ATUAL DA APLICAÇÃO SENDO UTILIZADA É: 2.0.0.
+> A aplicação possui 2 versões:
+> Versão 1.0.0 -->
+> Versão 2.0.0 ( Atual ) -->
 
 **Descrição do Projeto:**
 
