@@ -3,8 +3,6 @@
 > [!NOTE]
 > A VERSÃO ATUAL DA APLICAÇÃO SENDO UTILIZADA É: 2.0.0.
 
----
-
 **Descrição do Projeto:**
 
 O **AIHackLogistics** é um aplicativo Android desenvolvido para facilitar o agendamento e a gestão de consultas médicas. Ele permite que os usuários realizem agendamentos, visualizem uma lista de consultas, editem ou excluam consultas já marcadas, tudo com armazenamento em tempo real no Firebase. 
