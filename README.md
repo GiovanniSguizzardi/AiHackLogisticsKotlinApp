@@ -64,11 +64,13 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 ## Telas presentes na aplicação:
 
 ### Página Inicial:
+![image](https://github.com/user-attachments/assets/19f2c840-9d30-4f13-9937-9c4db8d61ec8)
 
 ### Página | Agendar Consulta:
-![image](https://github.com/user-attachments/assets/b4c74a07-6be8-428e-943d-b43ad50b61c4)
+![image](https://github.com/user-attachments/assets/dde9b407-ee11-4175-a87b-8dc6083f8147)
 
 ### Página | Confirmar Consulta:
+![image](https://github.com/user-attachments/assets/f4cd7581-787d-43dd-868c-9b981bfc2ef5)
 
 ### Página | Listar Consulta(s):
 ![image](https://github.com/user-attachments/assets/355fa04b-0675-4909-9bf6-d95ae0b4a50e)
