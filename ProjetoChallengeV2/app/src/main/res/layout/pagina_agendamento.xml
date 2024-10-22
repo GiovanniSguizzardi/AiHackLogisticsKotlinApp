@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.challenge.aihacklogistics.fragment.PaginaAgendamentoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/label_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/input_nome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Digite seu nome"
+            android:padding="12dp"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_nome"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/label_especialidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Especialidade:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_nome"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/input_especialidade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Digite a especialidade"
+            android:padding="12dp"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_especialidade"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/label_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_especialidade"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/input_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Selecione a data"
+            android:maxLength="10"
+            android:padding="12dp"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_data"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/label_cpf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPF:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_data"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/input_cpf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Digite seu CPF"
+            android:maxLength="11"
+            android:padding="12dp"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_cpf"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/button_consultar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
+            android:text="Consultar disponibilidade"
+            android:textColor="@android:color/white"
+            android:padding="16dp"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_cpf"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/button_limpar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:text="Limpar campos"
+            android:textColor="@android:color/white"
+            android:padding="16dp"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_consultar"
+            android:layout_marginTop="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

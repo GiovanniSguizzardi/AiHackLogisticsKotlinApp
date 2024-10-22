@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre o AiHack"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:paddingBottom="16dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/txtVersao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Versão: 2.0.0"
+        android:textSize="18sp"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/txtDataLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data de lançamento da versão: 22/10/2024"
+        android:textSize="18sp"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/txtCriadoresTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criadores:"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_dark" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp">
+        <TextView
+            android:id="@+id/txtCriador1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Giovanni Sguizzardi Conde"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/txtCriador2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Nicolas Eiti Inohue"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/txtCriador3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Marcel Prado Soddano"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/txtCriador4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Samara Moreira"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/txtCriador5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Vinicius Monteiro"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtNovidadesTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Novidades da Versão 2.0"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:id="@+id/txtNovidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="• Animações suaves para transições entre telas\n• Botões e ícones redesenhados\n• Funcionalidades CRUD aprimoradas com Firebase\n• Integração com Async Storage para armazenamento local\n• Melhorias de desempenho e correção de bugs"
+        android:textSize="16sp"
+        android:lineSpacingExtra="5dp" />
+</LinearLayout>
