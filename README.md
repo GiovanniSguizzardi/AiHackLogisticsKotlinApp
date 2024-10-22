@@ -2,8 +2,8 @@
 
 > [!WARNING]
 > A aplicação possui 2 versões:
-> - Versão 1.0.0 --> https://github.com/GiovanniSguizzardi/AiHackLogisticsKotlinApp/tree/f44e184e371c74e86e31e70585b6ff3b6c1d938a/ProjetoChallenge
-> - Versão 2.0.0 ( Atual ) --> https://github.com/GiovanniSguizzardi/AiHackLogisticsKotlinApp/tree/f44e184e371c74e86e31e70585b6ff3b6c1d938a/ProjetoChallengeV2
+> - [Versão 1.0.0](https://github.com/GiovanniSguizzardi/AiHackLogisticsKotlinApp/tree/f44e184e371c74e86e31e70585b6ff3b6c1d938a/ProjetoChallenge)
+> - [Versão 2.0.0](https://github.com/GiovanniSguizzardi/AiHackLogisticsKotlinApp/tree/f44e184e371c74e86e31e70585b6ff3b6c1d938a/ProjetoChallengeV2)
 
 **Descrição do Projeto:**
 
