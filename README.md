@@ -1,50 +1,54 @@
-# AI Hack Logistics - App de Agendamento e Gestão de Consultas
-
----
-
-**Integrantes:**
-
-- RM551261 - Giovanni Sguizzardi
-- RM98057 - Nicolas E. Inohue
-- RM99841 - Marcel Prado
-- RM552302 - Samara Moreira 
-- RM552293 - Vinicius Monteiro
+# AI Hack Logistics - App de Agendamento, gestão de Consultas
 
 ---
 
 **Descrição do Projeto:**
 
-O AIHackLogistics é um aplicativo Android projetado para agendamentos e marcação de consultas médicas. O aplicativo permite que os usuários criem novos agendamentos de consulta, visualizem uma lista de consultas e editem ou excluam consultas anteriores, tudo com o auxílio do Firebase.
-Além disso, oferece validações importantes de dados, como CPF e data de agendamento, para garantir que as informações inseridas pelos usuários sejam precisas. A interface do aplicativo foi projetada para proporcionar uma experiência contínua, com pouca dificuldade ao navegar entre a página de agendamento, listagem e edição.
+O **AIHackLogistics** é um aplicativo Android desenvolvido para facilitar o agendamento e a gestão de consultas médicas. Ele permite que os usuários realizem agendamentos, visualizem uma lista de consultas, editem ou excluam consultas já marcadas, tudo com armazenamento em tempo real no Firebase. 
+
+Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de usuário aprimorada com novas funcionalidades, validações, animações e melhorias visuais. Isso garante que o processo de agendamento de consultas seja mais intuitivo, rápido e visualmente agradável para o usuário.
 
 ---
 
 ## Principais Funcionalidades:
 
-- **Agendamento de Consultas**: O usuário pode selecionar uma especialidade médica, escolher a data e informar seus dados pessoais (nome e CPF) para realizar o agendamento.
-- **Validação de CPF e Data**: O sistema valida se o CPF é válido e se a data fornecida é uma data possível e no formato correto (`dd/MM/yyyy`).
-- **Listagem de Consultas**: As consultas agendadas são listadas em uma interface amigável, e o usuário pode clicar em qualquer consulta para editá-la.
-- **Edição de Consultas**: Ao selecionar uma consulta na lista, o usuário é redirecionado para uma página de edição onde pode atualizar os dados.
-- **Exclusão de Consultas**: O app também permite desmarcar consultas previamente agendadas.
-- **Firebase**: Utiliza o Firebase Realtime Database para armazenar e gerenciar os dados das consultas em tempo real.
+### **Novidades na Versão 2.0.0**:
+
+- **Interface Atualizada com Animações**: Agora, a interface conta com transições suaves e animações, melhorando a experiência do usuário ao navegar entre as telas.
+- **Botões e Ícones Modernizados**: Todos os botões foram atualizados com novos ícones e cores, conferindo um design mais moderno e minimalista ao app.
+- **Modo de Edição Melhorado**: O usuário agora pode editar consultas com maior facilidade, com um design refinado e uma interface mais intuitiva.
+- **Avisos de Navegação**: Mensagens visuais foram adicionadas para informar o usuário sobre a possibilidade de voltar à tela anterior quando necessário.
+- **Função Async Storage**: Além do Firebase, foi implementado o Async Storage para garantir que, mesmo offline, o app ainda consiga salvar temporariamente as informações dos agendamentos localmente e sincronizar posteriormente.
+
+### **Funcionalidades Clássicas**:
+
+- **Agendamento de Consultas**: Permite ao usuário selecionar uma especialidade médica, informar os dados pessoais (nome e CPF) e marcar uma consulta para uma data e horário específicos.
+- **Validação de CPF e Data**: O app faz a validação de CPF e da data de agendamento para garantir que os dados fornecidos sejam corretos.
+- **Listagem de Consultas**: Uma interface clara e organizada onde o usuário pode visualizar todas as consultas agendadas.
+- **Edição e Exclusão de Consultas**: O app possibilita editar ou excluir consultas facilmente, tudo isso com o armazenamento e sincronização no Firebase.
+- **Firebase Realtime Database**: Integração com o Firebase para armazenamento em tempo real das consultas e gerenciamento dinâmico dos dados.
 
 ---
 
 ## Estrutura do Projeto:
 
-- **Frontend**: Desenvolvido em Kotlin, utilizando componentes nativos do Android para garantir uma interface responsiva e intuitiva.
-- **Backend**: O Firebase é utilizado como backend para armazenamento em tempo real e gerenciamento de dados das consultas.
-- **Validação de Dados**: CPF e data são validados utilizando funções customizadas antes que o agendamento seja realizado.
+- **Frontend**: Desenvolvido em **Kotlin**, o projeto utiliza componentes nativos do Android, garantindo uma UI responsiva, fluida e de fácil uso.
+- **Backend**: O **Firebase Realtime Database** armazena e gerencia os dados em tempo real, permitindo que as consultas sejam sincronizadas entre diferentes dispositivos.
+- **Async Storage**: Implementado para garantir o salvamento temporário dos dados localmente no dispositivo, permitindo que o usuário continue a interagir com o app mesmo sem conexão à internet.
+- **Animações e Transições**: Novas animações e transições entre telas foram adicionadas, criando uma experiência mais agradável.
+- **Validação de Dados**: As funções de validação para CPF e Data de Agendamento garantem a inserção correta de dados pelos usuários.
 
 ---
 
 ## Tecnologias Utilizadas:
 
-- **Kotlin**: Linguagem de programação principal utilizada para o desenvolvimento do aplicativo Android.
-- **Firebase Realtime Database**: Banco de dados NoSQL em tempo real, usado para armazenar as consultas.
-- **OkHttp**: Biblioteca utilizada para realizar requisições HTTP e conectar o aplicativo ao Firebase.
-- **Android Jetpack Navigation**: Utilizado para navegação entre os diferentes fragments do app.
-- **ViewBinding**: Implementado para facilitar o acesso aos componentes de UI, reduzindo código boilerplate.
+- **Kotlin**: Linguagem de programação principal utilizada para o desenvolvimento da aplicação Android.
+- **Firebase Realtime Database**: Utilizado como backend para armazenamento em tempo real.
+- **OkHttp**: Biblioteca para requisições HTTP.
+- **Async Storage**: Armazenamento de dados local, implementado para otimizar a usabilidade em modo offline.
+- **Android Jetpack Navigation**: Utilizado para gerenciar a navegação entre os diferentes fragments do app.
+- **ViewBinding**: Facilita o acesso aos componentes de UI e reduz código repetitivo (boilerplate).
+- **Lottie Animations**: Implementado para animações suaves e modernas na interface.
 
 ---
 
