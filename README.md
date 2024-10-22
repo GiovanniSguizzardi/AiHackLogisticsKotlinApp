@@ -55,26 +55,24 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 
 ## Estrutura de Pastas:
 
-![image](https://github.com/user-attachments/assets/6a6ebdf8-6e77-465b-9758-840e9c3c02bb)
+![image](https://github.com/user-attachments/assets/dbbd2586-d5b8-42f0-940b-773685c5c5c2)
 
 ---
 
 ## Telas presentes na aplicação:
 
 ### Página Inicial:
-![image](https://github.com/user-attachments/assets/c87af1b1-b155-4654-bc04-707b51a00829)
 
-### Página de Agendamento de Consultas:
+### Página | Agendar Consulta:
 ![image](https://github.com/user-attachments/assets/b4c74a07-6be8-428e-943d-b43ad50b61c4)
 
-### Página de Confirmação da Consulta:
-![image](https://github.com/user-attachments/assets/e1c77a0e-2961-434b-a6af-187022331d41)
+### Página | Confirmar Consulta:
 
-### Página de Consultas Marcadas:
+### Página | Listar Consulta(s):
 ![image](https://github.com/user-attachments/assets/355fa04b-0675-4909-9bf6-d95ae0b4a50e)
 
-### Página de Desmarcar Consultas:
+### Página | Desmarcar Consulta(s):
 ![image](https://github.com/user-attachments/assets/bfa1ed95-21b6-48ef-a0e3-65331b81d602)
 
-### Página de Edição de Consultas:
+### Página | Editar Consulta(s):
 ![image](https://github.com/user-attachments/assets/f34e9326-cca1-40bf-8e28-3c3de717869e)
