@@ -22,6 +22,7 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 - **Modo de Edição Melhorado**: O usuário agora pode editar consultas com maior facilidade, com um design refinado e uma interface mais intuitiva.
 - **Avisos de Navegação**: Mensagens visuais foram adicionadas para informar o usuário sobre a possibilidade de voltar à tela anterior quando necessário.
 - **Função Async Storage**: Além do Firebase, foi implementado o Async Storage para garantir que, mesmo offline, o app ainda consiga salvar temporariamente as informações dos agendamentos localmente e sincronizar posteriormente.
+- **Confirmação de Exclusão da Consulta**: Foi implementada um pop-up na página de Desmarcar Consulta para verificar se REALMENTE o usuario gostaria de fazer aquela ação.
 
 ### **Funcionalidades Clássicas**:
 
