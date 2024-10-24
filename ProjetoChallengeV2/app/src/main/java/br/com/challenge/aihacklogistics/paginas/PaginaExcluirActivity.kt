@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import br.com.challenge.aihacklogistics.R
 import okhttp3.*
@@ -98,7 +99,7 @@ class PaginaExcluirActivity : Fragment() {
             val view = convertView ?: inflater.inflate(android.R.layout.simple_list_item_2, parent, false)
 
             val cliente = getItem(position)
-            //Linhas que vão aparecer na nossa View
+            // Linhas que vão aparecer na nossa View
             val linha01 = view.findViewById<TextView>(android.R.id.text1)
             val linha02 = view.findViewById<TextView>(android.R.id.text2)
 
@@ -107,36 +108,53 @@ class PaginaExcluirActivity : Fragment() {
 
             // Adicionando a funcionalidade de exclusão ao clicar no item
             view.setOnClickListener {
-                excluirCliente(cliente?.id)
+                mostrarConfirmacaoExclusao(cliente)
             }
 
             return view
         }
 
-        // Função para excluir cliente
-        private fun excluirCliente(clienteId: String?) {
-            clienteId?.let {
-                val request = Request.Builder()
-                    .url("$BASE_URL/contatos/$it.json")
-                    .delete()
-                    .build()
-
-                cliente.newCall(request).enqueue(object : Callback {
-                    override fun onFailure(call: Call, e: IOException) {
-                        requireActivity().runOnUiThread {
-                            Toast.makeText(requireContext(), "Erro ao desmarcar: ${e.message}", Toast.LENGTH_LONG).show()
-                        }
+        // Função para mostrar o AlertDialog de confirmação
+        private fun mostrarConfirmacaoExclusao(cliente: Cliente?) {
+            cliente?.let {
+                val dialogBuilder = AlertDialog.Builder(requireContext())
+                dialogBuilder.setMessage("Tem certeza que deseja desmarcar a consulta de ${cliente.nome} marcada para o dia ${cliente.dt_consulta}?")
+                    .setCancelable(false)
+                    .setPositiveButton("Sim") { _, _ ->
+                        excluirCliente(cliente.id)
+                    }
+                    .setNegativeButton("Não") { dialog, _ ->
+                        dialog.dismiss()
                     }
 
-                    override fun onResponse(call: Call, response: Response) {
-                        requireActivity().runOnUiThread {
-                            Toast.makeText(requireContext(), "Consulta desmarcada com sucesso!", Toast.LENGTH_LONG).show()
-                            clientesList.removeAll { cliente -> cliente.id == it }
-                            notifyDataSetChanged()
-                        }
-                    }
-                })
+                val alert = dialogBuilder.create()
+                alert.setTitle("Confirmar Exclusão")
+                alert.show()
             }
+        }
+
+        // Função para excluir cliente
+        private fun excluirCliente(clienteId: String) {
+            val request = Request.Builder()
+                .url("$BASE_URL/contatos/$clienteId.json")
+                .delete()
+                .build()
+
+            cliente.newCall(request).enqueue(object : Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                    requireActivity().runOnUiThread {
+                        Toast.makeText(requireContext(), "Erro ao desmarcar: ${e.message}", Toast.LENGTH_LONG).show()
+                    }
+                }
+
+                override fun onResponse(call: Call, response: Response) {
+                    requireActivity().runOnUiThread {
+                        Toast.makeText(requireContext(), "Consulta desmarcada com sucesso!", Toast.LENGTH_LONG).show()
+                        clientesList.removeAll { cliente -> cliente.id == clienteId }
+                        notifyDataSetChanged()
+                    }
+                }
+            })
         }
     }
 }
