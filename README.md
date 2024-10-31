@@ -42,7 +42,6 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 ---
 
 ## Estrutura do Projeto:
-
 - **Frontend**: Desenvolvido em **Kotlin**, o projeto utiliza componentes nativos do Android, garantindo uma UI responsiva e de fácil uso.
 - **Backend**: O **Firebase Realtime Database** armazena e gerencia os dados em tempo real, permitindo que as consultas e pedidos de medicamentos sejam sincronizados entre diferentes dispositivos.
 - **Async Storage**: Implementado para garantir o salvamento temporário dos dados localmente no dispositivo, permitindo que o usuário continue a interagir com o app mesmo sem conexão à internet.
@@ -50,13 +49,11 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 - **Validação de Dados**: As funções de validação para CPF e Data garantem a inserção correta de dados pelos usuários.
 
 ### Estrutura e Código do Módulo de Medicamentos
-
 Para facilitar a navegação e desenvolvimento, as novas funcionalidades de medicamentos foram organizadas da seguinte forma no repositório:
+
   - `activity_medicamentos`: Conjunto de layouts e XMLs específicos para a gestão de medicamentos.
   - `activity_inicial_medicamentos.xml`: Tela inicial do módulo de medicamentos, com acesso às opções de listagem, solicitação e exclusão.
   - `activity_listar_pedidos.xml`: Layout para listar os pedidos de medicamentos, com design adaptado para exibir as informações mais relevantes.
-
-- **Fragments e Classes Kotlin**:
   - `PaginaMedicamentosActivity`: Tela principal para navegação das funcionalidades de medicamentos.
   - `PaginaSolicitacaoMedicamentoFragment`: Fragment para solicitação de novos medicamentos.
   - `PaginaListarPedidosFragment`: Exibe a lista de pedidos e permite edição e exclusão.
@@ -64,7 +61,6 @@ Para facilitar a navegação e desenvolvimento, as novas funcionalidades de medi
   - `PaginaExcluirPedidoFragment`: Implementação para exclusão de pedidos de medicamentos com confirmação.
 
 ### Atualizações no Navigation e Estrutura de Rotas
-
 As novas rotas adicionadas ao `nav_graph.xml` incluem as transições entre as telas de medicamentos e consultas, garantindo uma navegação clara e organizada. Veja um exemplo de configuração das novas ações:
 
 - `action_PaginaInicial_to_PaginaMedicamentosActivity`
