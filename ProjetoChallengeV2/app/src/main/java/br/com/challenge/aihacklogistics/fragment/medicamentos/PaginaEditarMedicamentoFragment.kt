@@ -1,4 +1,4 @@
-package br.com.challenge.aihacklogistics.fragment
+package br.com.challenge.aihacklogistics.fragment.medicamentos
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -10,57 +10,54 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.challenge.aihacklogistics.R
-import br.com.challenge.aihacklogistics.databinding.ActivityEditarConsultaBinding
+import br.com.challenge.aihacklogistics.databinding.ActivityEditarMedicamentoBinding
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
 import java.io.IOException
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.*
 
-class PaginaEditarConsultaFragment : Fragment() {
+class PaginaEditarMedicamentoFragment : Fragment() {
 
-    private var _binding: ActivityEditarConsultaBinding? = null
+    private var _binding: ActivityEditarMedicamentoBinding? = null
     private val binding get() = _binding!!
     private val BASE_URL = "https://tdsr-d6c6c-default-rtdb.firebaseio.com"
     private val cliente = OkHttpClient()
     private lateinit var sharedPreferences: SharedPreferences
-    private var consultaId: String? = null
+    private var pedidoId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = ActivityEditarConsultaBinding.inflate(inflater, container, false)
-        sharedPreferences = requireContext().getSharedPreferences("ConsultasPrefs", Context.MODE_PRIVATE)
+        _binding = ActivityEditarMedicamentoBinding.inflate(inflater, container, false)
+        sharedPreferences = requireContext().getSharedPreferences("PedidosPrefs", Context.MODE_PRIVATE)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Recebe os dados da consulta enviados pelo bundle
-        consultaId = arguments?.getString("id")
-        val dadosConsulta = arguments?.getString("dadosConsulta")
-        val jsonConsulta = JSONObject(dadosConsulta)
+        // Recebe os dados do pedido enviados pelo bundle
+        pedidoId = arguments?.getString("id")
+        val dadosPedido = arguments?.getString("dadosPedido")
+        val jsonPedido = JSONObject(dadosPedido)
 
         // Preencher os campos com os dados recebidos
-        binding.inputNome.setText(jsonConsulta.getString("nome"))
-        binding.inputEspecialidade.setText(jsonConsulta.getString("especialidade"))
-        binding.inputCpf.setText(jsonConsulta.getString("cpf"))
-        binding.inputDataConsulta.setText(jsonConsulta.getString("dt_consulta"))
+        binding.inputNomeSolicitante.setText(jsonPedido.getString("nome"))
+        binding.inputMedicamento.setText(jsonPedido.getString("medicamento"))
+        binding.inputQuantidade.setText(jsonPedido.getString("quantidade"))
+        binding.inputCpf.setText(jsonPedido.getString("cpf"))
 
         // Lógica do botão Salvar
         binding.buttonSalvar.setOnClickListener {
-            val nome = binding.inputNome.text.toString()
-            val especialidade = binding.inputEspecialidade.text.toString()
+            val nome = binding.inputNomeSolicitante.text.toString()
+            val medicamento = binding.inputMedicamento.text.toString()
+            val quantidade = binding.inputQuantidade.text.toString()
             val cpf = binding.inputCpf.text.toString()
-            val dataConsulta = binding.inputDataConsulta.text.toString()
 
             // Validação básica dos campos
-            if (nome.isEmpty() || especialidade.isEmpty() || cpf.isEmpty() || dataConsulta.isEmpty()) {
+            if (nome.isEmpty() || medicamento.isEmpty() || quantidade.isEmpty() || cpf.isEmpty()) {
                 Toast.makeText(requireContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -71,29 +68,23 @@ class PaginaEditarConsultaFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            // Verificação de validade da data
-            if (!isValidDate(dataConsulta)) {
-                Toast.makeText(requireContext(), "Data inválida!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            // Criação do JSON com os dados atualizados
-            val consultaAtualizadaJson = """
+            // Criação do JSON com os dados atualizados do pedido
+            val pedidoAtualizadoJson = """
                 {
                     "nome": "$nome",
-                    "especialidade": "$especialidade",
-                    "cpf": "$cpf",
-                    "dt_consulta": "$dataConsulta"
+                    "medicamento": "$medicamento",
+                    "quantidade": "$quantidade",
+                    "cpf": "$cpf"
                 }
             """.trimIndent()
 
             // Salvar localmente antes de enviar ao Firebase
-            salvarConsultaLocalmente(nome, especialidade, dataConsulta, cpf)
+            salvarPedidoLocalmente(nome, medicamento, quantidade, cpf)
 
             // Criação da requisição PUT para o Firebase
             val request = Request.Builder()
-                .url("$BASE_URL/contatos/$consultaId.json")
-                .put(consultaAtualizadaJson.toRequestBody("application/json".toMediaType()))
+                .url("$BASE_URL/pedidos/$pedidoId.json")
+                .put(pedidoAtualizadoJson.toRequestBody("application/json".toMediaType()))
                 .build()
 
             // Callback da requisição HTTP
@@ -102,7 +93,7 @@ class PaginaEditarConsultaFragment : Fragment() {
                     requireActivity().runOnUiThread {
                         Toast.makeText(
                             requireContext(),
-                            "Erro ao atualizar consulta: ${e.message}",
+                            "Erro ao atualizar pedido: ${e.message}",
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -112,12 +103,12 @@ class PaginaEditarConsultaFragment : Fragment() {
                     requireActivity().runOnUiThread {
                         Toast.makeText(
                             requireContext(),
-                            "Consulta atualizada com sucesso!",
+                            "Pedido atualizado com sucesso!",
                             Toast.LENGTH_LONG
                         ).show()
 
-                        // Voltar para a página anterior
-                        findNavController().navigate(R.id.action_PaginaEditarConsulta_to_ListarClientesActivity)
+                        // Voltar para a pagina inicial de medicamentos
+                        findNavController().navigate(R.id.action_PaginaEditarPedido_to_PaginaMedicamentosActivity)
                     }
                 }
             })
@@ -129,16 +120,16 @@ class PaginaEditarConsultaFragment : Fragment() {
         _binding = null
     }
 
-    // Função para salvar a consulta localmente
-    private fun salvarConsultaLocalmente(nome: String, especialidade: String, data: String, cpf: String) {
+    // Função para salvar o pedido localmente
+    private fun salvarPedidoLocalmente(nome: String, medicamento: String, quantidade: String, cpf: String) {
         val editor = sharedPreferences.edit()
         editor.putString("nome", nome)
-        editor.putString("especialidade", especialidade)
-        editor.putString("data", data)
+        editor.putString("medicamento", medicamento)
+        editor.putString("quantidade", quantidade)
         editor.putString("cpf", cpf)
         editor.apply()
 
-        Toast.makeText(requireContext(), "Consulta salva localmente!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Pedido salvo localmente!", Toast.LENGTH_SHORT).show()
     }
 
     // Função para validar CPF
@@ -154,16 +145,5 @@ class PaginaEditarConsultaFragment : Fragment() {
         val firstDigit = calcDigit((10 downTo 2).toList())
         val secondDigit = calcDigit((11 downTo 2).toList())
         return digits[9] == firstDigit && digits[10] == secondDigit
-    }
-
-    // Função para verificar se a data é válida
-    private fun isValidDate(date: String): Boolean {
-        val format = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-        format.isLenient = false
-        return try {
-            format.parse(date) != null
-        } catch (e: ParseException) {
-            false
-        }
     }
 }

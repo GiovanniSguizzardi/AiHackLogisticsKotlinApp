@@ -6,14 +6,12 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/PaginaInicial">
 
-    <!-- Página Inicial -->
+    <!-- Página Inicial de Consultas -->
     <fragment
         android:id="@+id/PaginaInicial"
-        android:name="br.com.challenge.aihacklogistics.paginas.PaginaInicialActivity"
-        android:label="AiHack - Medicina"
+        android:name="br.com.challenge.aihacklogistics.activity.agendamentos.PaginaInicialActivity"
+        android:label="AiHack - Consultas"
         tools:layout="@layout/pagina_inicial">
-
-        <!-- Ações a partir da Página Inicial -->
         <action
             android:id="@+id/action_PaginaInicial_to_PaginaAgendamento"
             app:destination="@id/PaginaAgendamento"
@@ -21,7 +19,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-
         <action
             android:id="@+id/action_PaginaInicial_to_ListarClientesActivity"
             app:destination="@id/ListarClientesActivity"
@@ -29,10 +26,16 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-
         <action
             android:id="@+id/action_PaginaInicial_to_PaginaExcluirActivity"
             app:destination="@id/PaginaExcluirActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_PaginaInicial_to_PaginaMedicamentosActivity"
+            app:destination="@id/PaginaMedicamentosActivity"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -42,11 +45,9 @@
     <!-- Página de Agendamento -->
     <fragment
         android:id="@+id/PaginaAgendamento"
-        android:name="br.com.challenge.aihacklogistics.fragment.PaginaAgendamentoFragment"
+        android:name="br.com.challenge.aihacklogistics.fragment.agendamentos.PaginaAgendamentoFragment"
         android:label="Página Agendamento"
         tools:layout="@layout/pagina_agendamento">
-
-        <!-- Ação para a Página de Confirmação -->
         <action
             android:id="@+id/action_PaginaAgendamento_to_PaginaConfirmacaoFragment"
             app:destination="@id/PaginaConfirmacaoFragment"
@@ -56,14 +57,12 @@
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
-    <!-- Página de Confirmação -->
+    <!-- Página de Confirmação de Agendamento -->
     <fragment
         android:id="@+id/PaginaConfirmacaoFragment"
-        android:name="br.com.challenge.aihacklogistics.fragment.PaginaConfirmacaoFragment"
+        android:name="br.com.challenge.aihacklogistics.fragment.agendamentos.PaginaConfirmacaoFragment"
         android:label="Página Confirmação"
         tools:layout="@layout/pagina_confirmacao">
-
-        <!-- Ação para voltar à Página Inicial -->
         <action
             android:id="@+id/action_PaginaConfirmacaoFragment_to_PaginaInicial"
             app:destination="@id/PaginaInicial"
@@ -73,14 +72,12 @@
             app:popExitAnim="@anim/slide_out_left" />
     </fragment>
 
-    <!-- Página de Listagem de Consultas -->
+    <!-- Listagem de Consultas -->
     <fragment
         android:id="@+id/ListarClientesActivity"
-        android:name="br.com.challenge.aihacklogistics.paginas.PaginaListarActivity"
+        android:name="br.com.challenge.aihacklogistics.activity.agendamentos.PaginaListarActivity"
         android:label="Consultas Marcadas"
         tools:layout="@layout/activity_listar_consultas">
-
-        <!-- Ação para a Página de Edição de Consulta -->
         <action
             android:id="@+id/action_PaginaListar_to_PaginaEditarConsulta"
             app:destination="@id/PaginaEditarConsulta"
@@ -90,14 +87,12 @@
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
-    <!-- Página de Edição de Consulta -->
+    <!-- Edição de Consultas -->
     <fragment
         android:id="@+id/PaginaEditarConsulta"
-        android:name="br.com.challenge.aihacklogistics.fragment.PaginaEditarConsultaFragment"
+        android:name="br.com.challenge.aihacklogistics.fragment.agendamentos.PaginaEditarConsultaFragment"
         android:label="Editar Consulta"
         tools:layout="@layout/activity_editar_consulta">
-
-        <!-- Ação para voltar à Página de Listagem de Consultas -->
         <action
             android:id="@+id/action_PaginaEditarConsulta_to_ListarClientesActivity"
             app:destination="@id/ListarClientesActivity"
@@ -105,8 +100,6 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
-
-        <!-- Ação para voltar à Página Inicial -->
         <action
             android:id="@+id/action_PaginaEditarConsulta_to_PaginaInicial"
             app:destination="@id/PaginaInicial"
@@ -116,14 +109,111 @@
             app:popExitAnim="@anim/slide_out_left" />
     </fragment>
 
-    <!-- Página de Exclusão de Consultas -->
+    <!-- Exclusão de Consultas -->
     <fragment
         android:id="@+id/PaginaExcluirActivity"
-        android:name="br.com.challenge.aihacklogistics.paginas.PaginaExcluirActivity"
+        android:name="br.com.challenge.aihacklogistics.activity.agendamentos.PaginaExcluirActivity"
         android:label="Desmarcar Consultas"
         tools:layout="@layout/activity_excluir_consultas"
         app:enterAnim="@anim/slide_in_right"
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
+
+    <!-- Página INICIAL de Medicamentos -->
+    <fragment
+        android:id="@+id/PaginaMedicamentosActivity"
+        android:name="br.com.challenge.aihacklogistics.activity.medicamentos.PaginaMedicamentosActivity"
+        android:label="AiHack - Medicamentos"
+        tools:layout="@layout/activity_inicial_medicamentos">
+        <action
+            android:id="@+id/action_PaginaMedicamentosActivity_to_PaginaSolicitacaoMedicamento"
+            app:destination="@id/PaginaSolicitacaoRemedios"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_PaginaMedicamentosActivity_to_ListarMedicamentos"
+            app:destination="@id/PaginaListagemRemedios"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_PaginaSolicitacaoMedicamentos_to_CancelarMedicamentos"
+            app:destination="@id/PaginaExcluirMedicamento"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Página de Solicitação de Medicamentos -->
+    <fragment
+        android:id="@+id/PaginaSolicitacaoRemedios"
+        android:name="br.com.challenge.aihacklogistics.fragment.medicamentos.PaginaSolicitacaoMedicamentoFragment"
+        android:label="Solicitação de Medicamentos"
+        tools:layout="@layout/pagina_solicitacao_medicamento">
+        <action
+            android:id="@+id/action_PaginaSolicitacaoMedicamento_to_PaginaConfirmacaoMedicamentoFragment"
+            app:destination="@id/PaginaConfirmacaoMedicamentoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Confirmação de Solicitação de Medicamentos -->
+    <fragment
+        android:id="@+id/PaginaConfirmacaoMedicamentoFragment"
+        android:name="br.com.challenge.aihacklogistics.fragment.medicamentos.PaginaConfirmacaoMedicamentoFragment"
+        android:label="Confirmação de Solicitação"
+        tools:layout="@layout/pagina_confirmacao_medicamento">
+        <action
+            android:id="@+id/action_PaginaConfirmacaoMedicamentoFragment_to_PaginaMedicamentosActivity"
+            app:destination="@id/PaginaMedicamentosActivity"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!-- Listagem de Medicamentos -->
+    <fragment
+        android:id="@+id/PaginaListagemRemedios"
+        android:name="br.com.challenge.aihacklogistics.activity.medicamentos.PaginaListarPedidosActivity"
+        android:label="Listagem de Medicamentos"
+        tools:layout="@layout/activity_listar_medicamentos">
+        <action
+            android:id="@+id/action_PaginaListarPedidos_to_PaginaEditarPedido"
+            app:destination="@id/PaginaEditarMedicamentos"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!-- Edição de Medicamentos -->
+    <fragment
+        android:id="@+id/PaginaEditarMedicamentos"
+        android:name="br.com.challenge.aihacklogistics.fragment.medicamentos.PaginaEditarMedicamentoFragment"
+        android:label="Edição de Medicamentos"
+        tools:layout="@layout/activity_editar_medicamento">
+        <action
+            android:id="@+id/action_PaginaEditarPedido_to_PaginaMedicamentosActivity"
+            app:destination="@id/PaginaMedicamentosActivity"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!-- Exclusao de Medicamentos -->
+    <fragment
+        android:id="@+id/PaginaExcluirMedicamento"
+        android:name="br.com.challenge.aihacklogistics.activity.medicamentos.PaginaExcluirPedidoActivity"
+        android:label="Exclusão de Medicamentos"
+        tools:layout="@layout/activity_listar_pedidos">
+    </fragment>
 </navigation>

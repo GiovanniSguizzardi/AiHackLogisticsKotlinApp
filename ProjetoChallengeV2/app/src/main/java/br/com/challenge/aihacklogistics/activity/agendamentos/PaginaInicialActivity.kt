@@ -1,4 +1,4 @@
-package br.com.challenge.aihacklogistics.paginas
+package br.com.challenge.aihacklogistics.activity.agendamentos
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -51,8 +51,14 @@ class PaginaInicialActivity : Fragment() {
             findNavController().navigate(R.id.action_PaginaInicial_to_ListarClientesActivity)
         }
 
+        // Navegação para a página de EXCLUSÃO de clientes
         binding.buttonExcluir.setOnClickListener {
             findNavController().navigate(R.id.action_PaginaInicial_to_PaginaExcluirActivity)
+        }
+
+        // Navegação para a página de SOLICITAÇÃO DE MEDICAMENTOS via FAB
+        binding.fabSolicitarRemedio.setOnClickListener {
+            findNavController().navigate(R.id.action_PaginaInicial_to_PaginaMedicamentosActivity)
         }
     }
 

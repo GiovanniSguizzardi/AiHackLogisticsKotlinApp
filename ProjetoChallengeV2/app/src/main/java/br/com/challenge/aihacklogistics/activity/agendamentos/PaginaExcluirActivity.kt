@@ -1,4 +1,4 @@
-package br.com.challenge.aihacklogistics.paginas
+package br.com.challenge.aihacklogistics.activity.agendamentos
 
 import android.os.Bundle
 import android.view.LayoutInflater

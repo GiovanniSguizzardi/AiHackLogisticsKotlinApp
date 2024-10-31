@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import br.com.challenge.aihacklogistics.databinding.ActivityMainBinding
-import br.com.challenge.aihacklogistics.paginas.PaginaSobreActivity // Import da nova Activity
+import br.com.challenge.aihacklogistics.activity.PaginaSobreActivity // Import da nova Activity
 
 class MainActivity : AppCompatActivity() {
 

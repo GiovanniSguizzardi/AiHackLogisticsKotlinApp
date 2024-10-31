@@ -1,4 +1,4 @@
-package br.com.challenge.aihacklogistics.fragment
+package br.com.challenge.aihacklogistics.fragment.medicamentos
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -10,15 +10,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.challenge.aihacklogistics.R
-import br.com.challenge.aihacklogistics.databinding.PaginaConfirmacaoBinding
+import br.com.challenge.aihacklogistics.databinding.PaginaConfirmacaoMedicamentoBinding
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
 
-class PaginaConfirmacaoFragment : Fragment() {
+class PaginaConfirmacaoMedicamentoFragment : Fragment() {
 
-    private var _binding: PaginaConfirmacaoBinding? = null
+    private var _binding: PaginaConfirmacaoMedicamentoBinding? = null
     private val binding get() = _binding!!
     private val BASE_URL = "https://tdsr-d6c6c-default-rtdb.firebaseio.com"
     private val cliente = OkHttpClient()
@@ -28,51 +28,45 @@ class PaginaConfirmacaoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = PaginaConfirmacaoBinding.inflate(inflater, container, false)
-        sharedPreferences = requireContext().getSharedPreferences("ConsultasPrefs", Context.MODE_PRIVATE)
+        _binding = PaginaConfirmacaoMedicamentoBinding.inflate(inflater, container, false)
+        sharedPreferences = requireContext().getSharedPreferences("SolicitacaoPrefs", Context.MODE_PRIVATE)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Recebendo os dados da consulta a partir dos argumentos
-        val nomePaciente = arguments?.getString("nome")
-        val dataConsulta = arguments?.getString("data")
-        val especialidade = arguments?.getString("especialidade")
+        val nomeSolicitante = arguments?.getString("nome")
+        val medicamento = arguments?.getString("medicamento")
+        val quantidade = arguments?.getString("quantidade")
         val cpf = arguments?.getString("cpf")
 
-        // Exibindo os dados na tela de confirmação
-        binding.nomePaciente.text = "Nome: $nomePaciente"
-        binding.data.text = "Data: $dataConsulta"
-        binding.especialidade.text = "Especialidade: $especialidade"
+        binding.nomeSolicitante.text = "Nome: $nomeSolicitante"
+        binding.medicamento.text = "Medicamento: $medicamento"
+        binding.quantidade.text = "Quantidade: $quantidade"
         binding.cpf.text = "CPF: $cpf"
 
-        // Ação do botão para confirmar e agendar consulta
-        binding.btnAgendar.setOnClickListener {
-            // Criação do JSON com os dados da consulta
-            val contatoJson = """
+        binding.btnConfirmarPedido.setOnClickListener {
+            val pedidoJson = """
                 {
-                    "nome": "$nomePaciente",
-                    "especialidade": "$especialidade",
-                    "cpf": "$cpf",
-                    "dt_consulta": "$dataConsulta"
+                    "nome": "$nomeSolicitante",
+                    "medicamento": "$medicamento",
+                    "quantidade": "$quantidade",
+                    "cpf": "$cpf"
                 }
             """.trimIndent()
 
-            // Envio dos dados para o Firebase
             val request = Request.Builder()
-                .url("$BASE_URL/contatos.json")
-                .post(contatoJson.toRequestBody("application/json".toMediaType()))
+                .url("$BASE_URL/pedidos.json")
+                .post(pedidoJson.toRequestBody("application/json".toMediaType()))
                 .build()
 
             cliente.newCall(request).enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {
-                    // Tratamento de erro na comunicação com o Firebase
                     requireActivity().runOnUiThread {
                         Toast.makeText(
                             requireContext(),
-                            "Erro ao agendar consulta: ${e.message}",
+                            "Erro ao confirmar pedido: ${e.message}",
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -80,18 +74,13 @@ class PaginaConfirmacaoFragment : Fragment() {
 
                 override fun onResponse(call: Call, response: Response) {
                     requireActivity().runOnUiThread {
-                        // Confirmação de sucesso na comunicação com o Firebase
                         Toast.makeText(
                             requireContext(),
-                            "Consulta agendada com sucesso!",
+                            "Pedido confirmado com sucesso!",
                             Toast.LENGTH_LONG
                         ).show()
-
-                        // Limpa os dados locais após o sucesso
                         limparDadosLocalmente()
-
-                        // Redireciona para a página inicial
-                        findNavController().navigate(R.id.action_PaginaConfirmacaoFragment_to_PaginaInicial)
+                        findNavController().navigate(R.id.action_PaginaConfirmacaoMedicamentoFragment_to_PaginaMedicamentosActivity)
                     }
                 }
             })
@@ -103,7 +92,6 @@ class PaginaConfirmacaoFragment : Fragment() {
         _binding = null
     }
 
-    // Função para limpar os dados locais de SharedPreferences
     private fun limparDadosLocalmente() {
         val editor = sharedPreferences.edit()
         editor.clear()

@@ -1,4 +1,4 @@
-package br.com.challenge.aihacklogistics.paginas
+package br.com.challenge.aihacklogistics.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

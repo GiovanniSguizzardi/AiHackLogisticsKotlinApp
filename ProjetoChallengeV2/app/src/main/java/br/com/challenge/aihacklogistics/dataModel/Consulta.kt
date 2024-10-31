@@ -1,4 +1,4 @@
-package br.com.challenge.aihacklogistics
+package br.com.challenge.aihacklogistics.dataModel
 
 import org.json.JSONObject
 

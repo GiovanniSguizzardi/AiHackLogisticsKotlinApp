@@ -1,4 +1,4 @@
-package br.com.challenge.aihacklogistics.fragment
+package br.com.challenge.aihacklogistics.fragment.agendamentos
 
 import android.content.Context
 import android.content.SharedPreferences
