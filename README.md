@@ -58,7 +58,7 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 
 ## Estrutura de Pastas:
 
-![image](https://github.com/user-attachments/assets/dbbd2586-d5b8-42f0-940b-773685c5c5c2)
+![image](https://github.com/user-attachments/assets/0b66d669-8e26-43da-9bae-3a2c4e705c37)
 
 ---
 
@@ -66,6 +66,9 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 
 ### Página Inicial:
 ![image](https://github.com/user-attachments/assets/19f2c840-9d30-4f13-9937-9c4db8d61ec8)
+
+### Página | Inicial de Pedido(s):
+![image](https://github.com/user-attachments/assets/2f866b28-d372-4902-8de1-e900b102b861)
 
 ### Página | Agendar Consulta:
 ![image](https://github.com/user-attachments/assets/dde9b407-ee11-4175-a87b-8dc6083f8147)
@@ -81,3 +84,17 @@ Com a nova atualização (versão 2.0.0), o aplicativo traz uma experiência de 
 
 ### Página | Editar Consulta(s):
 ![image](https://github.com/user-attachments/assets/f34e9326-cca1-40bf-8e28-3c3de717869e)
+
+### Página | Solicitar Medicamento:
+![image](https://github.com/user-attachments/assets/f990f06f-8000-4127-9739-10ed3eb1a37b)
+
+### Página | Confirmar Medicamento:
+![image](https://github.com/user-attachments/assets/57e421cd-de2d-406d-9851-0a998ff32058)
+
+### Página | Listar Medicamento(s):
+![image](https://github.com/user-attachments/assets/f4e47b7f-9a10-4597-88d0-48640d034001)
+
+### Página | Cancelar Pedido(s):
+![image](https://github.com/user-attachments/assets/1f062fa1-5335-46d9-acc0-ee586231dd71)
+
+
